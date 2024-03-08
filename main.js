@@ -21,7 +21,7 @@ app.use(cors());
 
 
 //routes
-app.use('/auth', userRequestLog, authRouter);
+app.use('/auth', authRouter, userRequestLog);
 app.use('/users', usersRouter)
 app.use('/movies', productsRouter)
 
