@@ -10,6 +10,7 @@ router.post('/registration', async(req, res) => {
         if(!response) res.send(500).send('Unknown server error');
 
         res.status(response.status).send(response.message);
+        next();
     } catch (err) {
         console.log(err.message);
         res.status(500).send('Unknown server error');
@@ -23,6 +24,7 @@ router.post('/login', async(req, res) => {
         if(!response) res.send(500).send('Unknown server error');
 
         res.status(response.status).send(response.message);
+        next();
     } catch (err) {
         console.log(err.message);
         res.status(500).send('Unknown server error');
