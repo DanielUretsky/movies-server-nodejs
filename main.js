@@ -3,14 +3,15 @@ const PORT = process.env.PORT || 3000;
 
 const express = require('express');
 const app = express();
-const userRequestLog = require('./middlewares/userRequestLog')
+const tokenMiddleware = require('./middlewares/tokenMiddleware');
+const userRequestLogMiddleware = require('./middlewares/userRequestLogMiddleware');
 
 const connectToDB = require('./configs/connectToDB');
 const cors = require('cors');
 
 const authRouter = require('./routers/authRouter')
 const usersRouter = require('./routers/usersRouter')
-const productsRouter = require('./routers/moviesRouter')
+
 
 //configs
 connectToDB();
@@ -21,9 +22,9 @@ app.use(cors());
 
 
 //routes
-app.use('/auth', authRouter, userRequestLog);
-app.use('/users', usersRouter)
-app.use('/movies', productsRouter)
+app.use('/auth', authRouter, userRequestLogMiddleware);
+app.use('/users', tokenMiddleware, usersRouter, userRequestLogMiddleware)
+
 
 //listen 
 app.listen(PORT, () => {
