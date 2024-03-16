@@ -22,16 +22,18 @@ router.post('/login', async(req, res, next) => {
         const {email, password} = req.body;
         const response = await authBLL.login(email, password);
         if(!response) res.send(500).send('Unknown server error');
-        //console.log(response);
-        
+      
         if(!req.session.user && response.status.toString()[0] == '2') {
+            //getting current date 
+            const date = new Date('2024-03-15T22:00:00.000Z');
+            date.setHours(0, 0, 0, 0);
             req.session.user = {
                 ...response.message.userInfo,
+                oldReceiptDate: date, 
                 numberOfRequests: 10,
             }
             req.session.save();  
         }
-        
         res.status(response.status).send(response.message);
         next();
     } catch (err) {
