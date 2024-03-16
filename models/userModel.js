@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const UserSchema = new mongoose.Schema({
     username: { 
         type: String, 
-        required: [true, 'Username is required'] 
+        required: [true, 'Username is required'],
     },
     firstname: { 
         type: String, 
@@ -36,7 +36,7 @@ const UserSchema = new mongoose.Schema({
     }
 }, {
     versionKey: false,
-    strict: 'throw'
+    strict: true
 });
 
 const User = mongoose.model("user", UserSchema, "users");

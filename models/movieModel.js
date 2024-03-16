@@ -7,7 +7,7 @@ const MovieSchema = new mongoose.Schema({
     },
     releaseDate: {
         type: String,
-        required: [true, 'Release date is required']
+        required: [true, 'Release date is required'],
     },
     producer: {
         type: String,
