@@ -40,8 +40,9 @@ const addMovie = async (movieObj) => {
 }
 
 const updateMovie = async (movieId, updatedMovieData) => {
-    if(!movieId || !updatedMovieData) return { status: 500, message: 'Unknown server error' };
+    console.log(movieId);
     try {
+        if(!movieId || !updatedMovieData) return { status: 500, message: 'Unknown server error' };
         for (const key in updatedMovieData) {
             if(!isNaN(Number(updatedMovieData[key]))) return {status: 400, message: `${key} must be a string`};
         }
