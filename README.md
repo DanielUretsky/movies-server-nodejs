@@ -28,47 +28,46 @@ This server contains functionality and logic for processing requests for the cli
     - email - **string, required, unique**
     - password - **string, required**
 
-    ![](./images-readme/registration-user-data.png)
+    ![](https://raw.githubusercontent.com/DanielUretsky/movies-server-nodejs/main/images-readme/registration-user-data.png)
     
     If all data types are correct and email and username are not found in the database, then the user will be added to the database, after which  will receive a message. with **status code $\color{green}{\textbf{201}}$**:
 
-    ![](./images-readme/registration-completed.png)
+    ![](https://raw.githubusercontent.com/DanielUretsky/movies-server-nodejs/main/images-readme/registration-completed.png)
 
     If one of the fields is missing(age for example) - **status code $\color{yellow}{\textbf{400}}$**:
 
-    ![](./images-readme/registration-empty-field.png)
+    ![](https://raw.githubusercontent.com/DanielUretsky/movies-server-nodejs/main/images-readme/registration-empty-field.png)
 
     If username or email already exists(email or username) - **status code $\color{yellow}{\textbf{409}}$**:
 
-    ![](./images-readme/registration-email-exist.png)
+    ![](https://raw.githubusercontent.com/DanielUretsky/movies-server-nodejs/main/images-readme/registration-email-exist.png)
 
     If error on server side - **status code $\color{red}{\textbf{500}}$**:
 
-    ![](./images-readme/sever-side-error.png)
+    ![](https://raw.githubusercontent.com/DanielUretsky/movies-server-nodejs/main/images-readme/sever-side-error.png)
 
   
 - ### /login - POST
     
     This route accepts body with user data(email, password):
 
-    ![](./images-readme/login-user-data.png)
-
+    ![](https://raw.githubusercontent.com/DanielUretsky/movies-server-nodejs/main/images-readme/login-user-data.png)
 
     If everything went successfully - **status code $\color{green}{\textbf{200}}$**:
     
-    ![](./images-readme/login-completed.png)
+    ![](https://raw.githubusercontent.com/DanielUretsky/movies-server-nodejs/main/images-readme/login-completed.png)
  
     If the email and password do not match in the database - **status code $\color{yellow}{\textbf{404}}$**:
 
-    ![](./images-readme/login-unknown-email-password.png)
+    ![](https://raw.githubusercontent.com/DanielUretsky/movies-server-nodejs/main/images-readme/login-unknown-email-password.png)
 
     If email or password are empty - **status code $\color{yellow}{\textbf{400}}$**:
 
-    ![](./images-readme/login-empty-email-password.png)
+    ![](https://raw.githubusercontent.com/DanielUretsky/movies-server-nodejs/main/images-readme/login-empty-email-password.png)
 
     If error on server side - **status code $\color{red}{\textbf{500}}$**:
 
-    ![](./images-readme/sever-side-error.png)
+    ![](https://raw.githubusercontent.com/DanielUretsky/movies-server-nodejs/main/images-readme/sever-side-error.png)
     
 
 ### http://localhost:4500/users:
@@ -78,11 +77,11 @@ This server contains functionality and logic for processing requests for the cli
     
     If everything went successfully - **status code $\color{green}{\textbf{200}}$**:
 
-    ![](./images-readme/logout-completed.png)
+    ![](https://raw.githubusercontent.com/DanielUretsky/movies-server-nodejs/main/images-readme/sever-side-error.png)
 
     If error on server side - **status code $\color{red}{\textbf{500}}$**:
 
-    ![](./images-readme/sever-side-error.png)
+    ![](https://raw.githubusercontent.com/DanielUretsky/movies-server-nodejs/main/images-readme/sever-side-error.png)
 
 - ### /home - GET
   
@@ -158,15 +157,15 @@ This server contains functionality and logic for processing requests for the cli
   
     **status code $\color{yellow}{\textbf{401}}$** 
     
-    ![](./images-readme//token-error.png)
+    ![](https://raw.githubusercontent.com/DanielUretsky/movies-server-nodejs/main/images-readme/token-error.png)
 
     If the user has spent the daily request limit - **status code $\color{yellow}{\textbf{403}}$**
 
-    ![](./images-readme/requests-limit.png)
+    ![](https://raw.githubusercontent.com/DanielUretsky/movies-server-nodejs/main/images-readme/requests-limit.png)
 
     If error on server side - **status code $\color{red}{\textbf{500}}$**:
 
-    ![](./images-readme/sever-side-error.png)
+    ![](https://raw.githubusercontent.com/DanielUretsky/movies-server-nodejs/main/images-readme/sever-side-error.png)
  
 
 - ### /home/account/ - GET
@@ -195,15 +194,15 @@ This server contains functionality and logic for processing requests for the cli
   
     **status code $\color{yellow}{\textbf{401}}$** 
     
-    ![](./images-readme//token-error.png)
+    ![](https://raw.githubusercontent.com/DanielUretsky/movies-server-nodejs/main/images-readme/token-error.png)
 
     If the user has spent the daily request limit - **status code $\color{yellow}{\textbf{403}}$**
 
-    ![](./images-readme/requests-limit.png)
+    ![](https://raw.githubusercontent.com/DanielUretsky/movies-server-nodejs/main/images-readme/requests-limit.png)
 
     If error on server side - **status code $\color{red}{\textbf{500}}$**:
 
-    ![](./images-readme/sever-side-error.png)
+    ![](https://raw.githubusercontent.com/DanielUretsky/movies-server-nodejs/main/images-readme/sever-side-error.png)
 
 - ### /home/account - POST
 
@@ -214,19 +213,19 @@ This server contains functionality and logic for processing requests for the cli
     - producer - **number, required**
     - duration - **string, required**
     
-    ![](./images-readme/home-account-post-movie-data.png)
+    ![](https://raw.githubusercontent.com/DanielUretsky/movies-server-nodejs/main/images-readme/home-account-post-movie-data.png)
 
     If everything went successfully - **status code $\color{green}{\textbf{201}}$**:
 
-    ![](./images-readme/home-account-post-completed.png)
+    ![](https://raw.githubusercontent.com/DanielUretsky/movies-server-nodejs/main/images-readme/home-account-post-completed.png)
 
     If one of the fields is empty(name for example) - **status code $\color{yellow}{\textbf{400}}$**:
 
-    ![](./images-readme/home-account-post-empty.png)
+    ![](https://raw.githubusercontent.com/DanielUretsky/movies-server-nodejs/main/images-readme/home-account-post-empty.png)
 
     If some field does not exist in the database schema - **status code $\color{yellow}{\textbf{400}}$**
 
-    ![](./images-readme/home-account-post-unknown-field.png)
+    ![](https://raw.githubusercontent.com/DanielUretsky/movies-server-nodejs/main/images-readme/home-account-post-unknown-field.png)
 
     If token:
      - not valid
@@ -235,15 +234,15 @@ This server contains functionality and logic for processing requests for the cli
   
     **status code $\color{yellow}{\textbf{401}}$** 
     
-    ![](./images-readme//token-error.png)
+    ![](https://raw.githubusercontent.com/DanielUretsky/movies-server-nodejs/main/images-readme/token-error.png)
 
     If the user has spent the daily request limit - **status code $\color{yellow}{\textbf{403}}$**
 
-    ![](./images-readme/requests-limit.png)
+    ![](https://raw.githubusercontent.com/DanielUretsky/movies-server-nodejs/main/images-readme/requests-limit.png)
 
     If error on server side - **status code $\color{red}{\textbf{500}}$**:
 
-    ![](./images-readme/sever-side-error.png)
+    ![](https://raw.githubusercontent.com/DanielUretsky/movies-server-nodejs/main/images-readme/sever-side-error.png)
 
 - ### /home/account/:id - PUT
     
@@ -251,15 +250,15 @@ This server contains functionality and logic for processing requests for the cli
 
     If everything went successfully - **status code $\color{green}{\textbf{200}}$**:
 
-    ![](./images-readme/home-account-put-completed.png)
+    ![](https://raw.githubusercontent.com/DanielUretsky/movies-server-nodejs/main/images-readme/home-account-put-completed.png)
 
     If updated field is empty(name for example) - **status code $\color{yellow}{\textbf{400}}$**:
 
-    ![](./images-readme/home-account-put-empty-field.png)
+    ![](https://raw.githubusercontent.com/DanielUretsky/movies-server-nodejs/main/images-readme/home-account-put-empty-field.png)
 
     If some field does not exist in the database schema - **status code $\color{yellow}{\textbf{400}}$**
 
-    ![](./images-readme/home-account-post-unknown-field.png)
+    ![](https://raw.githubusercontent.com/DanielUretsky/movies-server-nodejs/main/images-readme/home-account-post-unknown-field.png)
 
     If token:
      - not valid
@@ -268,22 +267,22 @@ This server contains functionality and logic for processing requests for the cli
   
     **status code $\color{yellow}{\textbf{401}}$** 
     
-    ![](./images-readme//token-error.png)
+    ![](https://raw.githubusercontent.com/DanielUretsky/movies-server-nodejs/main/images-readme/token-error.png)
 
     If the user has spent the daily request limit - **status code $\color{yellow}{\textbf{403}}$**
 
-    ![](./images-readme/requests-limit.png)
+    ![](https://raw.githubusercontent.com/DanielUretsky/movies-server-nodejs/main/images-readme/requests-limit.png)
     
     If error on server side - **status code $\color{red}{\textbf{500}}$**:
 
-    ![](./images-readme/sever-side-error.png)
+    ![](https://raw.githubusercontent.com/DanielUretsky/movies-server-nodejs/main/images-readme/sever-side-error.png)
 
 - ### /home/account/:id - DELETE
     This route accepts movie id from params:
 
     If everything went successfully - **status code $\color{green}{\textbf{200}}$**:
 
-    ![](./images-readme/home-account-delete-completed.png)
+    ![](https://raw.githubusercontent.com/DanielUretsky/movies-server-nodejs/main/images-readme/home-account-delete-completed.png)
 
     If token:
      - not valid
@@ -292,13 +291,13 @@ This server contains functionality and logic for processing requests for the cli
   
     **status code $\color{yellow}{\textbf{401}}$** 
     
-    ![](./images-readme/token-error.png)
+    ![](https://raw.githubusercontent.com/DanielUretsky/movies-server-nodejs/main/images-readme/token-error.png)
 
     If the user has spent the daily request limit - **status code $\color{yellow}{\textbf{403}}$**
 
-    ![](./images-readme/requests-limit.png)
+    ![](https://raw.githubusercontent.com/DanielUretsky/movies-server-nodejs/main/images-readme/requests-limit.png)
 
     If error on server side - **status code $\color{red}{\textbf{500}}$**:
 
-    ![](https://raw.githubusercontent.com/DanielUretsky/movies-server-nodejs/main/images-readme/home-account-delete-completed.png)
+    ![](https://raw.githubusercontent.com/DanielUretsky/movies-server-nodejs/main/images-readme/sever-side-error.png)
   
