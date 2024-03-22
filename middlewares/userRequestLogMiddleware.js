@@ -17,9 +17,7 @@ const userRequestLog = async (req, res, next) => {
             req.body.email || 
             req.user?.email || 
             req.body.username || 
-            req.user?.username || 
-            userSession.email ||  
-            userSession._id;
+            req.user?.username;
         
         const [reqBefore, reqAfter] = userRequestLogUtils.setNumberOfRequests(userSession, req.originalUrl, res.statusCode.toString());
         const requestLogObj = {
@@ -31,7 +29,7 @@ const userRequestLog = async (req, res, next) => {
             requestCompleted,
             numberOfRequestsBefore: reqBefore,
             numberOfRequestsAfter: reqAfter
-        }
+        };
 
         requestLogs.push(requestLogObj);
         await userRequestLogDLL.writetUserRequestLogFile({ requestLogs });

@@ -5,6 +5,7 @@ const jwt = require('jsonwebtoken');
 
 function authenticateToken(req, res, next) {
     try {
+        if(req.originalUrl === '/users/logout') return next();
         const authHeader = req.headers.authorization;
         if(!authHeader) res.status(401).send('Unauthorized!');
        

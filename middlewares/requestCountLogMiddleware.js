@@ -9,7 +9,6 @@ const requestCountLog = async(req, res, next) => {
         if(!requestCompleted) requests.failed++;
 
         await requestCountLogDLL.writetRequestsCountFile({ requests });
-
     } catch (err) {
         console.log(err);
     }

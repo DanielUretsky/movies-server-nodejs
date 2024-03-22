@@ -1,6 +1,7 @@
 
 const addDailyRequests = (req, res, next) => {
     try {
+        if(req.originalUrl === '/users/logout') return next();
         //getting current date 
         const dateToday = new Date();
         //this method allows to se date without hours, minutes, 
