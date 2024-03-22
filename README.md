@@ -38,7 +38,7 @@ This server contains functionality and logic for processing requests for the cli
 
     ![](https://raw.githubusercontent.com/DanielUretsky/movies-server-nodejs/main/images-readme/registration-empty-field.png)
 
-    If username or email already exists(email or username) - **status code $\color{yellow}{\textbf{409}}$**:
+    If username or email already exists - **status code $\color{yellow}{\textbf{409}}$**:
 
     ![](https://raw.githubusercontent.com/DanielUretsky/movies-server-nodejs/main/images-readme/registration-email-exist.png)
 
