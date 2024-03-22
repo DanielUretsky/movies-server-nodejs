@@ -1,7 +1,7 @@
 const setNumberOfRequests = (user, reqOriginalUrl, resStatusCode) => {
     let reqBefore = "";
     let reqAfter = "";
-  
+    console.log(reqOriginalUrl.includes('/logout'));
     switch (true) {
         case reqOriginalUrl.includes('/registration') && Boolean(!user) && resStatusCode[0] == '2':
             reqBefore = 10;
@@ -21,6 +21,11 @@ const setNumberOfRequests = (user, reqOriginalUrl, resStatusCode) => {
             reqAfter = user.numberOfRequests;
             return [reqBefore, reqAfter];
 
+        case reqOriginalUrl.includes('/logout'):
+            reqBefore = user.numberOfRequests;
+            reqAfter = user.numberOfRequests;
+            return [reqBefore, reqAfter];
+
         case Boolean(user) && resStatusCode[0] == '2':
             reqBefore = user.numberOfRequests + 1;
             reqAfter = user.numberOfRequests;
@@ -30,8 +35,8 @@ const setNumberOfRequests = (user, reqOriginalUrl, resStatusCode) => {
             reqBefore = user.numberOfRequests;
             reqAfter = user.numberOfRequests;
             return [reqBefore, reqAfter];
-
-        case Boolean(!user) :
+            
+        case Boolean(!user):
             return [reqBefore, reqAfter];   
     };
 }
