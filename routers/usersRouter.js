@@ -3,6 +3,18 @@ const router = express.Router();
 
 const usersBLL = require('../BLL/usersBLL');
 
+router.get('/logout', async (req, res, next) => {
+    try {
+        res.removeHeader('authorization');
+        res.status(200).send('You are logged out');
+        next()
+    }
+    catch(err) {
+        console.log(err);
+        res.status(500).send('Unknown server error'); 
+    }
+});
+
 router.get('/home', async (req, res, next) => {
     try {
         const response = await usersBLL.getAllMovies();
@@ -14,7 +26,7 @@ router.get('/home', async (req, res, next) => {
         console.log(err.message);
         res.status(500).send('Unknown server error'); 
     }
-})
+});
 
 router.get('/home/account/', async (req, res, next) => {
     try {
@@ -33,8 +45,9 @@ router.get('/home/account/', async (req, res, next) => {
 
 router.post('/home/account', async (req, res, next) => {
     try {
+        const userId = req.user._id;
         const movieObj = req.body;
-        const response = await usersBLL.addMovie(movieObj);
+        const response = await usersBLL.addMovie(userId, movieObj);
 
         if (!response) res.status(500).send('Unknown server error');
 
