@@ -22,13 +22,13 @@ const getUserMovies = async (userId) => {
     }
 }
 
-const addMovie = async (movieObj) => {
+const addMovie = async (userId, movieObj) => {
     try {
-        const movie = new MovieModel({ ...movieObj });
+        const movie = new MovieModel({ ...movieObj, user: userId });
         if (!movie) return { status: 500, message: 'Unknown server error' };
 
         await movie.save();
-        return { status: 201, message: 'New movie added succesfully' };
+        return { status: 201, message: 'New movie added succesfully!' };
     } catch (err) {
         console.log(err.name);
         console.log(err.message);
@@ -40,13 +40,8 @@ const addMovie = async (movieObj) => {
 }
 
 const updateMovie = async (movieId, updatedMovieData) => {
-    console.log(movieId);
     try {
         if(!movieId || !updatedMovieData) return { status: 500, message: 'Unknown server error' };
-        for (const key in updatedMovieData) {
-            if(!isNaN(Number(updatedMovieData[key]))) return {status: 400, message: `${key} must be a string`};
-        }
-       
         const updatedMovie = await MovieModel.findByIdAndUpdate(
             movieId,
             updatedMovieData,
@@ -58,7 +53,7 @@ const updateMovie = async (movieId, updatedMovieData) => {
 
         if (!updatedMovie) return { status: 500, message: 'Unknown server error' };
 
-        return { status: 200, message: 'Movie updated succesfully' };
+        return { status: 200, message: 'Movie updated succesfully!'};
     } catch (err) {
         console.log(err.name);
         console.log(err.message);
@@ -71,12 +66,10 @@ const updateMovie = async (movieId, updatedMovieData) => {
 
 const deleteMovie = async (movieId) => {
     try {
-        console.log(movieId);
         const deletedMovie = await MovieModel.findByIdAndDelete(movieId);
         if(!deletedMovie) return { status: 500, message: ' Unknown server error' };
         
         return { status: 200, message: 'Movie deleted succesfully'};
-        
     } catch (err) {
         console.log(err.name);
         console.log(err.message);

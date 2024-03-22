@@ -1,6 +1,4 @@
-require('dotenv').config();
 const UserModel = require('../models/userModel');
-
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 
@@ -53,7 +51,7 @@ const login = async (email, password) => {
         };
     } catch (err) {
         console.log(err.message);
-        return { status: 500, message: 'Unknown server error' }
+        return { status: 500, message: 'Unknown server error' };
     }
 }
 
