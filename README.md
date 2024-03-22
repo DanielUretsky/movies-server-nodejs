@@ -292,7 +292,7 @@ This server contains functionality and logic for processing requests for the cli
   
     **status code $\color{yellow}{\textbf{401}}$** 
     
-    ![](./images-readme//token-error.png)
+    ![](./images-readme/token-error.png)
 
     If the user has spent the daily request limit - **status code $\color{yellow}{\textbf{403}}$**
 
@@ -300,5 +300,5 @@ This server contains functionality and logic for processing requests for the cli
 
     If error on server side - **status code $\color{red}{\textbf{500}}$**:
 
-    ![ssd](../home-account-delete-completed.png)
+    ![ssd](home-account-delete-completed.png)
   
