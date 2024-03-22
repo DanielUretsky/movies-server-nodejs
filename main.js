@@ -1,9 +1,8 @@
 require('dotenv').config();
+
 const PORT = process.env.PORT || 3000;
 const express = require('express');
 const session = require('express-session');
-//const cron = require('node-cron');
-
 const app = express();
 
 const connectToDB = require('./configs/connectToDB');
@@ -36,16 +35,26 @@ app.use(session({
     saveUninitialized: false,
     store: store,
     name: 'user',
-    cookie: {
-
-    }
+    cookie: {}
 }));
 
 //routes
-app.use('/auth', authRouter, dailyRequestsMiddleware, userRequestLogMiddleware, requestCountLogMiddleware);
-app.use('/users', tokenMiddleware, dailyRequestsMiddleware, checkAmountOfRequestsMiddleware, usersRouter, userRequestsMiddleware, userRequestLogMiddleware, requestCountLogMiddleware);
+app.use('/auth', 
+    authRouter, 
+    dailyRequestsMiddleware, 
+    userRequestLogMiddleware, 
+    requestCountLogMiddleware
+);
+
+app.use('/users', 
+    tokenMiddleware, 
+    dailyRequestsMiddleware, 
+    checkAmountOfRequestsMiddleware, 
+    usersRouter, 
+    userRequestsMiddleware, 
+    userRequestLogMiddleware, 
+    requestCountLogMiddleware
+);
 
 //listen 
-app.listen(PORT, () => {
-    console.log(`Server is running: http://localhost:${PORT}`);
-}); 
+app.listen(PORT, () => console.log(`Server is running: http://localhost:${PORT}`)); 
