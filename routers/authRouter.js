@@ -25,7 +25,7 @@ router.post('/login', async(req, res, next) => {
       
         if(!req.session.user && response.status.toString()[0] == '2') {
             //getting current date 
-            const date = new Date('2024-03-15T22:00:00.000Z');
+            const date = new Date();
             date.setHours(0, 0, 0, 0);
             req.session.user = {
                 ...response.message.userInfo,
