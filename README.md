@@ -300,5 +300,5 @@ This server contains functionality and logic for processing requests for the cli
 
     If error on server side - **status code $\color{red}{\textbf{500}}$**:
 
-    ![ssd](./movies-server-nodejs/images-readme/home-account-delete-completed.png)
+    ![](https://raw.githubusercontent.com/DanielUretsky/movies-server-nodejs/main/images-readme/home-account-delete-completed.png)
   
