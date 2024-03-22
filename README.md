@@ -300,5 +300,5 @@ This server contains functionality and logic for processing requests for the cli
 
     If error on server side - **status code $\color{red}{\textbf{500}}$**:
 
-    ![](../images-readme/sever-side-error.png)
+    ![](../server/images-readme/home-account-delete-completed.png)
   
