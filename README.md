@@ -124,14 +124,6 @@ This server contains functionality and logic for processing requests for the cli
             "user": "65f2217800dca98e340e069b"
         },
         {
-            "_id": "65f4b0ea08e92678c319d95b",
-            "name": "Avengers: Infinity War",
-            "releaseDate": "April 27, 2018",
-            "producer": "Kevin Feige",
-            "duration": "2h 29m",
-            "user": "65ea36f4d8c495451393a9b4"
-        },
-        {
             "_id": "65f4be325c882f83341b3591",
             "name": "Avengers: Infinity War",
             "releaseDate": "April 27, 2018",
